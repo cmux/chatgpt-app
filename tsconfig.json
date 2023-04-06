@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["ES2015", "DOM"],
+        "allowSyntheticDefaultImports": true,
+        "declaration": true, /* Generates corresponding '.d.ts' file. */
+        "outDir": "dist", /* Redirect output structure to the directory. */
+        "jsx": "react"
+    },
+    "include": [
+        "src/**/*",
+        "rollup.config.js",
+        "pk.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

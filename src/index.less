@@ -1,0 +1,92 @@
+@import url('./constants/vars.less');
+
+.index {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  .index-list {
+    width: 100%;
+    height: calc(100% - @index-bottom);
+    overflow-y: auto;
+  }
+  .input-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    height: @index-bottom;
+    padding: 20px @index-padding-lr;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    .index-input-box {
+      width: 100%;
+      height: @input-box-height;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      .index-input {
+        flex-grow: 1;
+        height: 100%;
+        line-height: @input-box-height;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-size: 16px;
+        padding: 10px 14px;
+        box-sizing: border-box;
+        input {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .index-input-right {
+        width: 80px;
+        height: 100%;
+        flex-grow: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin-left: 40px;
+        background: linear-gradient(
+          to right,
+          rgb(101, 124, 138),
+          rgba(101, 124, 138, 0.5)
+        );
+        &.active {
+          background: linear-gradient(to right, #096594, #259bd3);
+        }
+        .index-send {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .index {
+    .index-list {
+      height: calc(100% - @index-bottom-mobile);
+    }
+    .input-bottom {
+      height: @index-bottom-mobile;
+      padding: 10px @index-padding-lr-mobile;
+      .index-input-box {
+        height: @input-box-height-mobile;
+        .index-input {
+          line-height: @input-box-height-mobile;
+        }
+        .index-input-right {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
